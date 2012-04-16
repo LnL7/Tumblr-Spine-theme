@@ -7,4 +7,11 @@ class App extends Spine.Controller
 	constructor: ->
 		super
 
+	render: ->
+		@html CK.render @view, @
+		@
+
+	view: ->
+		h1 'Loaded'
+
 module.exports = App
