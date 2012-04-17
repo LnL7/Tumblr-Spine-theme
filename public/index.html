@@ -18,6 +18,15 @@
 		var jQuery  = require("jqueryify");
 		var exports = this;
 		jQuery(function(){
+			var Blog = require("models/blog");
+			Blog.create({
+				"title": "{Title}",
+				"description": "{Description",
+				"portrait": "{PortraitURL-128}",
+				"years": "{CopyrightYears}",
+				"rss": "{RSS}"
+			});
+
 			var App = require("index");
 			exports.app = new App({el: $("body")});
 			app.render();
