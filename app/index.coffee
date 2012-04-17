@@ -2,16 +2,15 @@ require 'lib/setup'
 
 CK = require 'lib/coffeekup'
 Spine = require 'spine'
+Posts = require 'controllers/posts'
 
 class App extends Spine.Controller
 	constructor: ->
 		super
+		@posts = Posts.init()
 
 	render: ->
-		@html CK.render @view, @
+		@html @posts.render().el
 		@
-
-	view: ->
-		h1 'Loaded'
 
 module.exports = App
