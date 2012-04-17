@@ -1,0 +1,6 @@
+Spine = require 'spine'
+
+class Post extends Spine.Model
+	@configure 'Post', 'text', 'photo', 'type', 'url'
+
+module.exports = Post

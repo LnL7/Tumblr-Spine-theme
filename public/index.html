@@ -20,12 +20,39 @@
 		jQuery(function(){
 			var Blog = require("models/blog");
 			Blog.create({
-				"title": "{Title}",
-				"description": "{Description",
-				"portrait": "{PortraitURL-128}",
-				"years": "{CopyrightYears}",
-				"rss": "{RSS}"
+				title: "{Title}",
+				description: "{Description",
+				portrait: "{PortraitURL-128}",
+				years: "{CopyrightYears}",
+				rss: "{RSS}"
 			});
+
+			var Post = require("models/post");
+			var Text = require("models/text");
+			var Photo = require("models/photo");
+			// {block:Posts}
+			Post.create({
+
+				// {block:Text}
+				text: Text.create({
+					title: "{Title}",
+					body: "{Body}"
+				}),
+				// {/block:Text}
+
+				// {block:Photo}
+				photo: Photo.create({
+					url: "{PhotoURL-500}",
+					link: "{LinkURL}",
+					caption: "{Caption}"
+				}),
+				// {/block:Photo}
+
+				type: "{PostType}",
+				url: "{Permalink}",
+				id: "{PostID}"
+			});
+			// {/block:Posts}
 
 			var App = require("index");
 			exports.app = new App({el: $("body")});
