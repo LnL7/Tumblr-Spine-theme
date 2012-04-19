@@ -10,7 +10,8 @@ class List extends Spine.Controller
 		@
 
 	view: ->
-		h1 'List...'
+		div class:'page', ->
+			h1 'List...'
 
 class Posts extends Spine.Stack
 	constructor: ->
@@ -25,8 +26,11 @@ class Posts extends Spine.Stack
 		'/list': 'list'
 
 	render: ->
-		@html ''
+		@html CK.render @view, @
 		@append @list.render().el
 		@
+
+	view: ->
+		div class:'page'
 
 module.exports = Posts
