@@ -28,9 +28,32 @@
 			});
 
 			var Post = require("models/post");
+			var Tag = require("models/tag");
+			var Date = require("models/date");
+
+			Tag.create({
+				id: "Tags",
+				url: "#"
+			});
 
 			var Text = require("models/text");
 			Post.create({
+				tags: [
+					Tag.create({
+						id: "Nullam",
+						url: "/tag/nullam"
+					}),
+					Tag.create({
+						id: "Nunc",
+						url: "/tag/nunc"
+					}),
+					Tag.find('Tags')
+				],
+				date: Date.create({
+					year: "2012",
+					month: "Apr",
+					day: "01"
+				}),
 				text: Text.create({
 					title: "Aenean",
 					body: "Aenean viverra, ante vitae sodales rutrum, dolor metus porttitor urna, ac sollicitudin urna turpis vitae erat. Aliquam consequat, velit eu varius faucibus, turpis augue tempor nisl, sit amet sollicitudin leo sem id sapien. Nunc fermentum dui ut sem pretium at ullamcorper felis aliquam. Nunc nec nulla enim, sed egestas augue. Nullam tristique, ante eget iaculis tempor, odio diam sagittis mi, ut molestie orci risus vel purus. Nulla facilisi. Integer felis odio, commodo id dignissim id, tincidunt eu lectus. Phasellus adipiscing tellus diam. Fusce enim urna, eleifend sed aliquet vitae, ultrices id risus. Phasellus mattis, felis a laoreet varius, elit leo adipiscing lectus, eu gravida nibh leo egestas velit. Nunc sit amet vestibulum orci. Duis et mauris id ligula ornare convallis sed interdum justo."
@@ -42,6 +65,22 @@
 
 			var Photo = require("models/photo");
 			Post.create({
+				tags: [
+					Tag.create({
+						id: "Nullam",
+						url: "/tag/nullam"
+					}),
+					Tag.create({
+						id: "Nunc",
+						url: "/tag/nunc"
+					}),
+					Tag.find('Tags')
+				],
+				date: Date.create({
+					year: "2012",
+					month: "Apr",
+					day: "13"
+				}),
 				photo: Photo.create({
 					url: "/2.png",
 					link: "/2.png",

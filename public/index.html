@@ -28,10 +28,38 @@
 			});
 
 			var Post = require("models/post");
+			var Tag = require("models/tag");
+			var Date = require("models/date");
 			var Text = require("models/text");
 			var Photo = require("models/photo");
+
+			Tag.create({
+				id: "Tags",
+				url: "#"
+			});
+
 			// {block:Posts}
 			Post.create({
+
+				// {block:HasTags}
+				tags: [
+					// {block:Tags}
+					Tag.create({
+						id: "{Tag}",
+						url: "{TagURLChrono}"
+					}),
+					// {/block:Tags}
+					Tag.find('Tags')
+				],
+				// {/block:HasTags}
+
+				// {block:Date}
+				date: Date.create({
+					year: "{Year}",
+					month: "{ShortMonth}",
+					day: "{DayOfMonthWithZero}"
+				}),
+				// {/block:Date}
 
 				// {block:Text}
 				text: Text.create({
