@@ -29,7 +29,7 @@ class List extends Spine.Controller
 
 					if tags = post.tags
 						div style:'margin-top:16px; text-align:right;', ->
-							for tag in tags
+							for tag in tags when tag.id != 'Tags'
 								a class:'link', href: tag.url, ->
 									span {style:'margin-left:8px;'}, tag.id
 
