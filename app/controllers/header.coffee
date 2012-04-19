@@ -18,11 +18,11 @@ class Header extends Spine.Controller
 					img src: @blog.header_img, style:'width:100%;'
 
 				if @blog.title_img
-					img src: @blog.title_img, style:'width:100%;'
+					img src: @blog.title_img, style:'width:75%;'
 				else
 					h1 @blog.title
 
-				i @blog.description
-				div class:'line', style:'margin-top:0'
+				div -> i @blog.description
+				div class:'line'
 
 module.exports = Header
