@@ -17,7 +17,7 @@ class List extends Spine.Controller
 				a href:'#/show/' + post.id, id:'post', ->
 					div class:'line', ->
 						if date = post.date
-							span "#{date.month} #{date.year}"
+							span "#{date.day} #{date.month} #{date.year}"
 
 					if text = post.text
 						b text.title
@@ -49,7 +49,7 @@ class Show extends Spine.Controller
 				a href: post.url, id:'post', ->
 					div class:'line', ->
 						if date = post.date
-							span "#{date.month} #{date.year}"
+							span "#{date.day} #{date.month} #{date.year}"
 
 					if text = post.text
 						b text.title
