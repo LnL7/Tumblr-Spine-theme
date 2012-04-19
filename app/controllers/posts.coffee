@@ -1,9 +1,11 @@
 CK = require 'lib/coffeekup'
 Spine = require 'spine'
+Post = require 'models/post'
 
 class List extends Spine.Controller
 	constructor: ->
 		super
+		@posts = Post.all()
 
 	render: ->
 		@html CK.render @view, @
@@ -11,7 +13,18 @@ class List extends Spine.Controller
 
 	view: ->
 		div class:'page', ->
-			h1 'List...'
+			for post in @posts
+				div class:'line', ->
+					if date = post.date
+						span "#{date.month} #{date.year}"
+
+				if text = post.text
+					b text.title
+					p text.body
+
+				if photo = post.photo
+					img src: photo.url, style:'max-width:100%;'
+					div style:'text-align:center;', -> i photo.caption
 
 class Posts extends Spine.Stack
 	constructor: ->
