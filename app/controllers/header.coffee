@@ -23,6 +23,5 @@ class Header extends Spine.Controller
 					h1 @blog.title
 
 				div -> i @blog.description
-				div class:'line'
 
 module.exports = Header

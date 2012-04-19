@@ -9,6 +9,11 @@
 		<style type="text/css" charset="utf-8">{CustomCSS}</style>
 		<meta name="image:Header" content=""/>
 		<meta name="image:Title" content=""/>
+		<meta name="text:Home" content="/#/"/>
+		<meta name="text:Archive" content="/archive"/>
+		<meta name="text:Twitter" content=""/>
+		<meta name="text:Facebook" content=""/>
+		<meta name="text:Flickr" content=""/>
 	</head>
 	<body>
 		<h1>Loading...</h1>
@@ -102,6 +107,41 @@
 				count: "{TotalPages}"
 				// {/block:Pagination}
 			});
+
+			var Menu = require("models/menu");
+			Menu.create({
+				name: "Home",
+				url: "{text:Home}"
+			});
+			Menu.create({
+				name: "Archive",
+				url: "{text:Archive}"
+			});
+			// {block:IfTwitter}
+			Menu.create({
+				name: "Twitter",
+				url: "{text:Twitter}"
+			});
+			// {/block:IfTwitter}
+			// {block:IfFacebook}
+			Menu.create({
+				name: "Facebook",
+				url: "{text:Facebook}"
+			});
+			// {/block:IfFacebook}
+			// {block:IfFlickr}
+			Menu.create({
+				name: "Flickr",
+				url: "{text:Flickr}"
+			});
+			// {/block:IfFlickr}
+
+			// {block:Pages}
+			Menu.create({
+				name: "{Label}",
+				url: "{URL}"
+			});
+			// {/block:Pages}
 
 			var App = require("index");
 			exports.app = new App({el: $("body")});
