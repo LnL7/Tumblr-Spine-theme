@@ -15,11 +15,17 @@ body
 	color: color-1
 
 a
-	color: color-2
+	color: color-1
 	text-decoration: none
+
+a.link
+	color: color-2
 
 a:hover
 	color: color-1
+
+.stack > *:not(.active)
+	display: none
 
 .page
 	margin: auto
@@ -30,7 +36,7 @@ a:hover
 .line
 	margin: 0
 	margin-top: space-1
-	margin-bottom: space-2
+	margin-bottom: space-1
 	padding: 0
 
 	height: 0.5em
