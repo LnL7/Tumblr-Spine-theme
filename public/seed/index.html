@@ -90,6 +90,14 @@
 				id: "2"
 			});
 
+			var Nav = require("models/nav");
+			Nav.create({
+				previous: "/page/1",
+				next: "/page/3",
+				current: "/page/2",
+				count: "5"
+			});
+
 			var App = require("index");
 			exports.app = new App({el: $("body")});
 			app.render();

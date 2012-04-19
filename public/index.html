@@ -81,6 +81,20 @@
 			});
 			// {/block:Posts}
 
+			var Nav = require("models/nav");
+			Nav.create({
+				// {block:Pagination}
+				// {block:PreviousPage}
+				previous: "{PreviousPage}",
+				// {/block:PreviousPage}
+				// {block:NextPage}
+				next: "{NextPage}",
+				// {/block:NextPage}
+				current: "{CurrentPage}",
+				count: "{TotalPages}"
+				// {/block:Pagination}
+			});
+
 			var App = require("index");
 			exports.app = new App({el: $("body")});
 			app.render();
