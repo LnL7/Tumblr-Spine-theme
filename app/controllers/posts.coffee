@@ -26,6 +26,13 @@ class List extends Spine.Controller
 					img src: photo.url, style:'max-width:100%;'
 					div style:'text-align:center;', -> i photo.caption
 
+				if tags = post.tags
+					div style:'margin-top:16px; text-align:right;', ->
+						for tag in tags
+							a href: tag.url, ->
+								span {style:'margin-left:8px;'}, tag.id
+
+
 class Posts extends Spine.Stack
 	constructor: ->
 		super
