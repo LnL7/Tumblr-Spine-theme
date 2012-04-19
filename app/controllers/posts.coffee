@@ -46,7 +46,7 @@ class Show extends Spine.Controller
 	view: ->
 		div class:'page', ->
 			if post = @post()
-				a href:'#/', id:'post', ->
+				a href: post.url, id:'post', ->
 					div class:'line', ->
 						if date = post.date
 							span "#{date.month} #{date.year}"

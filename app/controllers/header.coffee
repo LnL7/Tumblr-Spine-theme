@@ -13,8 +13,9 @@ class Header extends Spine.Controller
 
 	view: ->
 		div class:'page', style:'text-align:center;', ->
-			h1 @blog.title
-			i @blog.description
-			div class:'line', style:'margin-top:0'
+			a href:'/#/', ->
+				h1 @blog.title
+				i @blog.description
+				div class:'line', style:'margin-top:0'
 
 module.exports = Header
