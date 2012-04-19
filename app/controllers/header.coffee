@@ -13,7 +13,7 @@ class Header extends Spine.Controller
 
 	view: ->
 		div class:'page', style:'text-align:center;', ->
-			a href:'/#/', ->
+			a href:'#/', ->
 				if @blog.header_img
 					img src: @blog.header_img, style:'width:100%;'
 
