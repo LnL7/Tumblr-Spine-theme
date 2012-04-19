@@ -14,7 +14,14 @@ class Header extends Spine.Controller
 	view: ->
 		div class:'page', style:'text-align:center;', ->
 			a href:'/#/', ->
-				h1 @blog.title
+				if @blog.header_img
+					img src: @blog.header_img, style:'width:100%;'
+
+				if @blog.title_img
+					img src: @blog.title_img, style:'width:100%;'
+				else
+					h1 @blog.title
+
 				i @blog.description
 				div class:'line', style:'margin-top:0'
 

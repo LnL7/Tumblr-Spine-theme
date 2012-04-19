@@ -7,6 +7,8 @@
 		<link rel="shortcut icon" href="{Favicon}">
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<style type="text/css" charset="utf-8">{CustomCSS}</style>
+		<meta name="image:Header" content=""/>
+		<meta name="image:Title" content=""/>
 	</head>
 	<body>
 		<h1>Loading...</h1>
@@ -19,6 +21,12 @@
 		jQuery(function(){
 			var Blog = require("models/blog");
 			Blog.create({
+				// {block:IfHeaderImage}
+				header_img: "{image:Header}",
+				// {/block:IfHeaderImage}
+				// {block:IfTitleImage}
+				title_img: "{image:Title}",
+				// {/block:IfTitleImage}
 				title: "{Title}",
 				description: "{Description}",
 				portrait: "{PortraitURL-128}",
